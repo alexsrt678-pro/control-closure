@@ -32,6 +32,14 @@ The nine public functions are:
 
 These are **functions, not pipeline steps**. They can operate together and can be decomposed further when a coarse function appears "green" but closure is still uncertain.
 
+## Independent market sample
+
+A second sample using AWS, Google, IBM, Cisco, OpenAI, and Okta was mapped against the same top-level frame.
+
+![Independent market sample B](assets/market-sample-b.svg)
+
+In this sample, no new top-level function outside F1-F9 was required. This is not presented as proof of universal completeness; it is evidence for a falsifiable hypothesis that materially different agent-control technologies continue to fit the same functional frame.
+
 ## Why this repository exists
 
 Market vendors are increasingly combining discovery, identity, policy, monitoring, isolation, and response into integrated agent-security systems. That is progress. It also makes a second question more important:
@@ -50,12 +58,6 @@ If this architecture is insufficient, the cleanest way to show it is not by prop
 
 See [CHALLENGE.md](CHALLENGE.md).
 
-## Test a real system
-
-For public systems, open a Discussion with a primary technical source.
-
-For a private agent stack, architecture review, implementation blueprint, pilot, or technical partnership: contact the author directly. Private systems are not treated as free public comment threads.
-
 ## Public boundary
 
 This repository publishes:
@@ -67,8 +69,19 @@ This repository publishes:
 
 It does **not** publish the internal TRINITY computation that derives placement, depth, re-selection, or transition authority.
 
+## LessWrong first-post material
+
+For LessWrong, the author-first version is kept separately from the broader repository article:
+
+- [Russian author source](LESSWRONG_SOURCE_RU.md)
+- [Direct English translation](LESSWRONG_DIRECT_TRANSLATION_EN.md)
+
+The English file is intentionally a direct translation rather than an AI rewrite.
+
 ## Start here
 
+- [LessWrong source - Russian](LESSWRONG_SOURCE_RU.md)
+- [LessWrong direct translation - English](LESSWRONG_DIRECT_TRANSLATION_EN.md)
 - [Flagship article - English draft](ARTICLE_EN.md)
 - [Flagship article - Russian draft](ARTICLE_RU.md)
 - [Evidence update - 2 Nov 2026](evidence/2026-11-02-control-closure.md)
