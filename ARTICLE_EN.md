@@ -1,134 +1,235 @@
-# I Mapped the Agent-Control Market Into One Architecture. The Hard Part Is Not Coverage - It Is Closure.
+# Can AI Agent Control Be Described by One Functional Architecture?
 
-TRINITY existed before this market study. I did not derive it from AI-safety papers, NIST frameworks, or vendor products.
+I already had an architecture for controlling complex systems before I started looking at AI Agent Control.
 
-I did the reverse: **I took an existing system architecture and applied it to autonomous AI-agent control.** Then I mapped real market mechanisms, standards, and research onto the resulting functional structure.
+I did not design it around AI safety, current products, or existing standards. The architecture came first: it was documented in ontological and engineering materials, and some mechanisms had already been translated into code.
 
-My claim is deliberately strong:
+So I tried a simple experiment: **take existing AI Agent Control solutions and see how they distribute inside an architecture that already existed.**
 
-> **This public functional architecture is sufficient as a control frame for AI-agent systems.**
+The result was more interesting than a taxonomy.
 
-That claim can be challenged. That is why I am publishing the map, evidence, and a concrete counterexample protocol.
+Different mechanisms — authorization, tracing, monitoring, validation, interruption, recovery, and others — formed a connected structure of functions, dependencies, and states. I then repeated the exercise on a second independent sample of technologies. The top-level functional architecture did not need to change.
 
-## Nine functions of one control architecture
+My current hypothesis is:
 
-At the public level, the architecture distinguishes nine functions:
+> **this architecture may be a sufficient functional description of the AI-agent control problem, and potentially a basis for a closed control layer.**
 
-1. **Scope / Inventory** - what objects and boundaries exist.
-2. **Trace / Integrity** - what happened and whether the evidence can be trusted.
-3. **Distinguish / Triage** - what condition or risk is actually present.
-4. **Adversarial Validation** - whether the control survives deliberate pressure.
-5. **Admission / Authority** - who or what may act, where, and under what authority.
-6. **Interrupt / Hold** - how action is paused, blocked, or retained.
-7. **Independent Assurance** - how the result is checked without relying only on the same control path.
-8. **Contain / Shutdown / Notify** - how impact is localized and activity is stopped or escalated.
-9. **Repair / Recover / Re-admit** - how a system returns to an admissible state and receives permission to continue.
+I want to test it at three levels:
 
-These are functions, not a linear pipeline. They can operate simultaneously and can be decomposed when a coarse function looks "covered" but closure remains uncertain.
+1. as a classifier of existing solutions;
+2. as a diagnostic instrument;
+3. as a possible basis for a future executable control layer.
 
-![Public AI-agent control architecture](assets/control-architecture-map.svg)
+I am primarily looking for counterexamples, not agreement.
 
-## First observation: the market already covers most functions
+## 1. First sample: how the market maps into the functional structure
 
-Across Microsoft, NIST, OWASP, AISI, Redwood-related work, Guidelight, and other approaches, the market is not empty. Most top-level functions already have real mechanisms associated with them.
+The first sample included public systems, standards, and research approaches from Microsoft, NIST, OWASP, AISI, Redwood, and others.
 
-I then changed the sample and repeated the mapping against AWS, Google, IBM, Cisco, OpenAI, and Okta.
+I mapped the mechanisms they claim to implement against the functions of the architecture. The resulting coverage map marks where a function is directly represented, partially represented, or not established in the public material I checked.
 
-Coverage changed. The top-level structure did not.
+![Market sample A](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/market-sample-a.svg)
 
-**The second sample did not require another top-level control function.**
+The obvious objection is:
 
-This does not mean every product solves its assigned function completely. It means materially different technologies continue to fit the same functional frame.
+> perhaps the classification was simply fitted to the first sample.
 
-## A green cell is not closure
+So I repeated the analysis.
 
-Recent work in October 2026 makes "we have a control" an insufficient statement.
+## 2. Second sample: different companies, same functional frame
 
-OpenAI explicitly separates monitoring coverage from intervention capability: a system can detect a concern without automatically terminating execution in every interface or integration path.
+The second sample used AWS, Google, IBM, Cisco, OpenAI, and Okta.
 
-External work by METR and Redwood found bypasses and coverage gaps in an earlier version of OpenAI's monitoring system, including boundaries where monitoring did not fully cover the trajectory.
+I did not change the top-level functional structure.
 
-Anthropic reported attack patterns involving agent handoffs, context compaction, and agent-generated data, showing that local controls can fail across context boundaries.
+![Market sample B](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/market-sample-b.svg)
 
-Research on distributed revocation makes the distinction even sharper: receiving and storing a revocation signal does not guarantee that every executor has actually stopped authorizing the action.
+The coverage changed, but **the second sample did not require a new top-level function**.
 
-That leads to the central formula:
+This is not proof of universal completeness. But it is a falsifiable result: if the architecture were merely fitted to the first sample, a materially different second sample should be more likely to force a change in the functional frame.
 
-> **Detected != Decided != Enforced != Effect stopped != State proved != Next action permitted.**
+So far, it has not.
 
-## The problem is no longer the absence of controls
+## 3. Classification was not the most interesting result
 
-The market is moving toward integrated systems. SentinelOne now markets Agentic Detection and Response as a connected layer spanning discovery, permissions, observation, and isolation. AWS, Google, IBM, Cisco, OpenAI, and Okta also combine multiple control functions in their stacks.
+At a coarse level, the current AI Agent Control market already looks fairly mature.
 
-So I am not making the weaker claim that "the market has isolated tools and I am the first person to combine them."
+There is tracing, provenance, authorization, monitoring, policy enforcement, interruption, recovery, guardrails, and evaluation.
 
-The stronger claim is:
+Many cells can therefore look green.
 
-> **Integration of mechanisms does not, by itself, prove closure of control.**
+But the architecture allows the resolution of a single function to be increased. This introduces a more important distinction:
 
-A system can detect a problem, decide to intervene, send a control command, and even receive a positive receipt while an effect still continues through another executor, context, or branch.
+> **the existence of a mechanism is not the same thing as closure of the function.**
 
-## What I mean by Control Closure
+## 4. Zoom 1 — can the evidence be trusted?
 
-Control is closed when we can establish not only that a control command existed, but the full required relationship around it:
+Consider Trace / Integrity.
 
-- what was being controlled;
-- what state was detected;
-- who had authority to decide;
-- whether the decision was actually enforced;
-- whether the unwanted effect stopped;
-- what evidence proves that state;
-- which system version that evidence belongs to;
-- what became permissible afterward;
-- whether re-admission is required before continuation.
+At the top level, current systems already provide logs, provenance, call history, and evidence mechanisms.
 
-At this point the map stops being a vendor catalog.
+But at higher resolution, different questions appear:
 
-It becomes a way to diagnose **where control actually breaks**.
+- which exact object version does the evidence refer to?
+- what happens after the object changes?
+- should mutation automatically invalidate old evidence?
+- can the causal chain be reconstructed?
+- can omitted actions be ruled out?
+- does the evidence survive restart or process loss?
+- when does old evidence become stale?
 
-## Three uses of the same architecture
+![Trace Integrity zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f2-trace-integrity.svg)
 
-### 1. Classifier
-A new mechanism can be placed relative to known functions so we can identify what control problem it actually solves.
+The question becomes:
 
-### 2. Diagnostic architecture
-A seemingly "green" function can be decomposed until we can see whether its internal obligations, evidence, and transitions are actually closed.
+> **can this evidence be trusted as the basis for the next control decision?**
 
-### 3. Basis for an executable control layer
-The same functions can be formalized as inputs, conditions, decisions, state evidence, and permission for the next transition.
+## 5. Zoom 2 — who is allowed to perform this action now?
 
-That third use is the engineering direction I am most interested in now.
+The second example is Admission / Authority.
 
-## I claim sufficiency - so the useful response is to break it
+At a high level, the market already has task-scoped authorization, pre-action gates, identity, provenance, and policy enforcement.
 
-I am not publishing this architecture to ask whether people like it.
+But when the resolution is increased, additional obligations appear:
 
-I am claiming that the top-level functional frame is sufficient for AI-agent control.
+- what exact task scope is allowed?
+- was this specific call admitted before execution?
+- where did the authority come from?
+- can that authority be delegated?
+- how is already-granted authority revoked?
+- did revocation reach every execution point?
+- do policy or object changes invalidate old permission?
+- on what basis is the next action allowed?
 
-If that is wrong, the useful counterexample is concrete:
+![Admission Authority zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f5-admission-authority.svg)
 
-- a necessary control function that is absent from the map;
-- a real system transition the architecture cannot express;
-- or a control system that requires a fundamentally different relation between functions.
+The question becomes:
 
-A new label for an existing mechanism is not a counterexample.
+> **does this specific agent have authority to perform this specific action now, in the current system state?**
 
-If a real missing function appears, the architecture should change. I will publish that result.
+## 6. Zoom 3 — when is recovery actually complete?
 
-## What I am not publishing
+The third example is Repair / Recover / Re-admit.
 
-The public layer includes functions, relationships, market mappings, and externally checkable results.
+“Recovery” can hide several distinct states:
 
-The internal TRINITY computation that derives placement, depth, re-selection, and transition authority is not part of the public artifact.
+**incident detected**
 
-The goal is to make the result falsifiable without publishing the engine.
+≠ **cause localized**
 
-## What next
+≠ **repair applied**
 
-If you have a public counterexample, bring the mechanism and a primary technical source.
+≠ **repair verified**
 
-If you have a private agent stack and want to know where control breaks, that is a separate architecture review.
+≠ **old evidence invalidated**
 
-If you are interested in turning this architecture into an executable control layer, that is the technical partnership I am currently looking for.
+≠ **authority recalculated**
 
-I am less interested in agreement than in the point where the architecture fails.
+≠ **re-admission granted**
+
+≠ **next operating cycle permitted**.
+
+![Recovery Readmission zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f9-recovery-readmission.svg)
+
+A repaired system is not necessarily a verified recovered system. A recovered system is not necessarily authorized to operate again.
+
+## 7. What the three zooms show together
+
+The first asks: **can the basis of the decision be trusted?**
+
+The second asks: **can this action be authorized?**
+
+The third asks: **can the resulting state be accepted and can the system continue?**
+
+These are parts of one connected control process:
+
+**what exists and what the decision is based on → what may be done → what state actually resulted.**
+
+So the central distinction is:
+
+> **mechanism exists ≠ function is closed.**
+
+## 8. Recent work shows the same boundary problem
+
+Recent 2026 work makes the distinction more concrete.
+
+OpenAI explicitly separates coverage from intervention: observing problematic behavior and being able to stop execution are different capabilities.
+
+METR and Redwood have demonstrated monitoring coverage gaps and bypass opportunities.
+
+Anthropic has shown problems around agent handoffs, compaction, and multi-context control.
+
+Research on distributed revocation makes an even narrower point: delivery and persistence of a revocation message do not guarantee that every execution point has actually stopped admitting actions.
+
+So I use a stricter sequence:
+
+> **detected ≠ decided ≠ enforced ≠ effect stopped ≠ state proved ≠ next action permitted.**
+
+## 9. Three possible uses
+
+### Classifier
+
+A new mechanism can be placed relative to known functions to see what problem it actually solves, what it duplicates, and what it leaves open.
+
+### Diagnostic instrument
+
+A “green” function can be decomposed to see whether the necessary dependencies and transitions are actually closed inside it.
+
+### Candidate executable control layer
+
+This is still a hypothesis, not a completed implementation.
+
+If the classification and diagnostic layers really reflect the underlying functions, states, and dependencies, then the next step is to make the same logic executable:
+
+**current state → permitted actions → condition checks → allow/deny → action → evidence of result → new state → next permitted transition.**
+
+If these dependencies can be formalized in code and placed above existing mechanisms, the architecture would no longer be only descriptive. It could participate in controlling their operation.
+
+## 10. How could this be wrong?
+
+There are several obvious possibilities.
+
+**First:** two samples are not enough.
+
+**Second:** mapping mechanisms to functions may still contain expert subjectivity.
+
+**Third:** a functionally complete architecture does not imply that an efficient runtime implementation is practical.
+
+**Fourth:** an existing architecture may already close the same problem more completely or in a fundamentally different way.
+
+## 11. What I want people to falsify
+
+I am interested in four types of counterexample:
+
+1. **A necessary AI Agent Control function missing from this architecture.**
+2. **A real transition that cannot be represented without adding a new top-level function.**
+3. **A place where my decomposition of a function is wrong.**
+4. **An existing architecture that closes this control loop in a fundamentally different or more complete way.**
+
+If a genuinely missing function appears, the architecture should change.
+
+## 12. What I am claiming now
+
+I am not claiming universal completeness has been proven.
+
+I am claiming something narrower and testable:
+
+> **two independent samples of existing technologies distributed inside the same top-level functional structure without requiring a new class of function.**
+
+Increasing the resolution of that structure also exposes open obligations inside mechanisms that appear complete at a coarse level.
+
+My current hypothesis is therefore:
+
+> **this architecture may be a sufficient functional description of the AI-agent control problem, and potentially a basis for a closed control layer.**
+
+The best way to test that is to try to break it.
+
+## Sources
+
+Full primary source list: https://github.com/alexsrt678-pro/control-closure/blob/main/SOURCES.md
+
+## AI-use disclosure
+
+The underlying architecture, functional logic, choice of arguments, interpretation of results, and position of this article are mine.
+
+I used ChatGPT to structure dictated material, edit wording, check coherence, and prepare the English version. The AI assistant did not originate the architecture or the central hypothesis.
