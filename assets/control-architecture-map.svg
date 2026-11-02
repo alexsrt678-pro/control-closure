@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="930" viewBox="0 0 1400 930">
+<style>
+  .bg{fill:#f5f0e6}.card{fill:#fffdf8;stroke:#bdb5a8;stroke-width:2}.h{font:700 42px Arial,sans-serif;fill:#23313a}.s{font:400 22px Arial,sans-serif;fill:#59656c}.n{font:700 24px Arial,sans-serif;fill:#23313a}.t{font:700 22px Arial,sans-serif;fill:#23313a}.d{font:400 18px Arial,sans-serif;fill:#59656c}.tag1{fill:#c77a61}.tag2{fill:#d1ad46}.tag3{fill:#7ea482}.white{fill:white;font:700 18px Arial,sans-serif}
+</style>
+<rect class="bg" width="1400" height="930"/>
+<text x="70" y="80" class="h">Public AI-Agent Control Architecture</text>
+<text x="70" y="120" class="s">Nine public functions. One question: does control actually close?</text>
+
+<g transform="translate(70,170)">
+  <rect class="tag1" x="0" y="0" rx="12" width="170" height="42"/><text x="85" y="28" text-anchor="middle" class="white">STRUCTURE</text>
+  <g transform="translate(0,60)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F1</text><text x="78" y="38" class="t">Scope / Inventory</text><text x="24" y="78" class="d">What exists? What are the boundaries?</text></g>
+  <g transform="translate(430,60)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F2</text><text x="78" y="38" class="t">Trace / Integrity</text><text x="24" y="78" class="d">What happened? Can the evidence be trusted?</text></g>
+  <g transform="translate(860,60)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F3</text><text x="78" y="38" class="t">Distinguish / Triage</text><text x="24" y="78" class="d">What condition or risk is actually present?</text></g>
+
+  <rect class="tag2" x="0" y="245" rx="12" width="170" height="42"/><text x="85" y="273" text-anchor="middle" class="white">OPERATION</text>
+  <g transform="translate(0,305)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F4</text><text x="78" y="38" class="t">Adversarial Validation</text><text x="24" y="78" class="d">Does control survive deliberate pressure?</text></g>
+  <g transform="translate(430,305)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F5</text><text x="78" y="38" class="t">Admission / Authority</text><text x="24" y="78" class="d">Who may act, where, and under what authority?</text></g>
+  <g transform="translate(860,305)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F6</text><text x="78" y="38" class="t">Interrupt / Hold</text><text x="24" y="78" class="d">How is action paused, blocked, or retained?</text></g>
+
+  <rect class="tag3" x="0" y="490" rx="12" width="170" height="42"/><text x="85" y="518" text-anchor="middle" class="white">STATE</text>
+  <g transform="translate(0,550)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F7</text><text x="78" y="38" class="t">Independent Assurance</text><text x="24" y="78" class="d">How is the result checked independently?</text></g>
+  <g transform="translate(430,550)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F8</text><text x="78" y="38" class="t">Contain / Shutdown / Notify</text><text x="24" y="78" class="d">How is impact localized and activity stopped?</text></g>
+  <g transform="translate(860,550)"><rect class="card" rx="16" width="400" height="145"/><text x="24" y="38" class="n">F9</text><text x="78" y="38" class="t">Repair / Recover / Re-admit</text><text x="24" y="78" class="d">How does the system safely return to operation?</text></g>
+</g>
+<text x="700" y="900" text-anchor="middle" class="s">Detected != Decided != Enforced != Effect stopped != State proved != Next action permitted</text>
+</svg>
