@@ -78,7 +78,7 @@ But at higher resolution, different questions appear:
 - does the evidence survive restart or process loss?
 - when does old evidence become stale?
 
-![Trace Integrity zoom](assets/zoom-f2-trace-integrity.svg)
+![Trace Integrity zoom](assets/03-zoom-trace-integrity.png)
 
 The question becomes:
 
@@ -101,7 +101,7 @@ But when the resolution is increased, additional obligations appear:
 - do policy or object changes invalidate old permission?
 - on what basis is the next action allowed?
 
-![Admission Authority zoom](assets/zoom-f5-admission-authority.svg)
+![Admission Authority zoom](assets/04-zoom-admission-authority.png)
 
 The question becomes:
 
@@ -129,7 +129,7 @@ The third example is Repair / Recover / Re-admit.
 
 ≠ **next operating cycle permitted**.
 
-![Recovery Readmission zoom](assets/zoom-f9-recovery-readmission.svg)
+![Recovery Readmission zoom](assets/05-zoom-recovery-readmission.png)
 
 A repaired system is not necessarily a verified recovered system. A recovered system is not necessarily authorized to operate again.
 

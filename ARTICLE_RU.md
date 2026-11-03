@@ -88,7 +88,7 @@
 - переживает ли доказательство перезапуск;
 - когда старое evidence становится недействительным.
 
-![Zoom Trace Integrity](assets/zoom-f2-trace-integrity.svg)
+![Zoom Trace Integrity](assets/03-zoom-trace-integrity.png)
 
 Вопрос уже не только в том, ведём ли мы лог.
 
@@ -114,7 +114,7 @@
 - нужно ли пересчитать старое разрешение;
 - на каком основании разрешается следующее действие.
 
-![Zoom Admission Authority](assets/zoom-f5-admission-authority.svg)
+![Zoom Admission Authority](assets/04-zoom-admission-authority.png)
 
 Вопрос уже не «есть ли у агента permission?», а:
 
@@ -144,7 +144,7 @@
 
 ≠ **разрешён следующий цикл работы**.
 
-![Zoom Recovery Readmission](assets/zoom-f9-recovery-readmission.svg)
+![Zoom Recovery Readmission](assets/05-zoom-recovery-readmission.png)
 
 Исправленная система ещё не обязательно является доказанно восстановленной системой. А восстановленная система ещё не обязательно имеет право снова действовать.
 
