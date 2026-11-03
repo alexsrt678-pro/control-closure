@@ -28,7 +28,7 @@ The first sample included public systems, standards, and research approaches fro
 
 I mapped the mechanisms they claim to implement against the functions of the architecture. The resulting coverage map marks where a function is directly represented, partially represented, or not established in the public material I checked.
 
-![Market sample A](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/market-sample-a.svg)
+![Market sample A](assets/market-sample-a.svg)
 
 The obvious objection is:
 
@@ -42,7 +42,7 @@ The second sample used AWS, Google, IBM, Cisco, OpenAI, and Okta.
 
 I did not change the top-level functional structure.
 
-![Market sample B](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/market-sample-b.svg)
+![Market sample B](assets/market-sample-b.svg)
 
 The coverage changed, but **the second sample did not require a new top-level function**.
 
@@ -78,7 +78,7 @@ But at higher resolution, different questions appear:
 - does the evidence survive restart or process loss?
 - when does old evidence become stale?
 
-![Trace Integrity zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f2-trace-integrity.svg)
+![Trace Integrity zoom](assets/zoom-f2-trace-integrity.svg)
 
 The question becomes:
 
@@ -101,7 +101,7 @@ But when the resolution is increased, additional obligations appear:
 - do policy or object changes invalidate old permission?
 - on what basis is the next action allowed?
 
-![Admission Authority zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f5-admission-authority.svg)
+![Admission Authority zoom](assets/zoom-f5-admission-authority.svg)
 
 The question becomes:
 
@@ -129,7 +129,7 @@ The third example is Repair / Recover / Re-admit.
 
 ≠ **next operating cycle permitted**.
 
-![Recovery Readmission zoom](https://raw.githubusercontent.com/alexsrt678-pro/control-closure/main/assets/zoom-f9-recovery-readmission.svg)
+![Recovery Readmission zoom](assets/zoom-f9-recovery-readmission.svg)
 
 A repaired system is not necessarily a verified recovered system. A recovered system is not necessarily authorized to operate again.
 
