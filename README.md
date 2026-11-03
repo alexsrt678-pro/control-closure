@@ -16,8 +16,6 @@ The stronger question is not whether a mechanism exists. It is whether control a
 
 ## Public control architecture
 
-![AI-agent control architecture](assets/control-architecture-map.svg)
-
 The nine public functions are:
 
 1. **Scope / Inventory** - what objects and boundaries exist.
@@ -32,11 +30,13 @@ The nine public functions are:
 
 These are **functions, not pipeline steps**. They can operate together and can be decomposed further when a coarse function appears "green" but closure is still uncertain.
 
-## Independent market sample
+## Independent market samples
+
+![First market sample A](assets/SOS_agent_control_chessboard_v04.png)
 
 A second sample using AWS, Google, IBM, Cisco, OpenAI, and Okta was mapped against the same top-level frame.
 
-![Independent market sample B](assets/market-sample-b.svg)
+![Independent market sample B](assets/Sample_B_81_FULL_v03.png)
 
 In this sample, no new top-level function outside F1-F9 was required. This is not presented as proof of universal completeness; it is evidence for a falsifiable hypothesis that materially different agent-control technologies continue to fit the same functional frame.
 
