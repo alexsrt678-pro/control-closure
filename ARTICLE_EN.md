@@ -28,7 +28,7 @@ The first sample included public systems, standards, and research approaches fro
 
 I mapped the mechanisms they claim to implement against the functions of the architecture. The resulting coverage map marks where a function is directly represented, partially represented, or not established in the public material I checked.
 
-![Market sample A](assets/market-sample-a.svg)
+![Market sample A](assets/SOS_agent_control_chessboard_v04.png)
 
 The obvious objection is:
 
@@ -42,7 +42,7 @@ The second sample used AWS, Google, IBM, Cisco, OpenAI, and Okta.
 
 I did not change the top-level functional structure.
 
-![Market sample B](assets/market-sample-b.svg)
+![Market sample B](assets/Sample_B_81_FULL_v03.png)
 
 The coverage changed, but **the second sample did not require a new top-level function**.
 
